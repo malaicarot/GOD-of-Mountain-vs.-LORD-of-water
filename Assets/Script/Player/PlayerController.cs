@@ -21,7 +21,11 @@ public class PlayerController : MonoBehaviour
     const float THRESHOLD = 0.1f;
     const float CONSTANT_JUMP = 2;
     const string MOVE_ANIMATION_BLEND_NAME = "Speed";
-    public string animation_blend_name { get => MOVE_ANIMATION_BLEND_NAME; }
+    const string JUMP_ANIMATION_BLEND_NAME = "Jump";
+
+    public string jump_animation_blend_name { get => JUMP_ANIMATION_BLEND_NAME; }
+
+    public string move_animation_blend_name { get => MOVE_ANIMATION_BLEND_NAME; }
 
     [Header("Local Variables")]
     public float speed;
@@ -68,6 +72,7 @@ public class PlayerController : MonoBehaviour
         if (input.move == Vector2.zero)
         {
             targetSpeed = 0;
+            
         }
         else
         {

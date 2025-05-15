@@ -9,7 +9,6 @@ public class IdleState : StateMachine
     {
         // player.ProcessMove();
         Debug.Log("Idle");
-        animator.SetFloat(player.animation_blend_name, player.TarGetSpeed());
     }
 
     public override void Exit()
@@ -28,5 +27,6 @@ public class IdleState : StateMachine
         {
             player.SetState(new JumpState(this.player));
         }
+        animator.SetFloat(player.move_animation_blend_name, player.TarGetSpeed()); // Tính toán lại tốc độ
     }
 }

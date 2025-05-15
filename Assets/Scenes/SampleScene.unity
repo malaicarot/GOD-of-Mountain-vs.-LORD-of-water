@@ -1195,11 +1195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraFollow: {fileID: 330585546}
   animator: {fileID: 1646704295}
-  walkSpeed: 6
+  walkSpeed: 8
   sprintSpeed: 15
   rotationSpeed: 8
   jumpHeight: 2
-  speedTransition: 0.8
+  speedTransition: 4
   speed: 0
 --- !u!95 &1646704295 stripped
 Animator:

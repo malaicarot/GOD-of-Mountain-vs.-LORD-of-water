@@ -8,7 +8,7 @@ public class JumpState : StateMachine
     public override void Enter()
     {
         Debug.Log("JumpState");
-
+        animator.SetTrigger("Jump");
     }
 
     public override void Exit()

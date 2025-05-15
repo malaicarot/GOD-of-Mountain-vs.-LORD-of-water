@@ -8,7 +8,6 @@ public class WalkState : StateMachine
     {
         // player.ProcessMove();
         Debug.Log("WalkState");
-        animator.SetFloat(player.animation_blend_name, player.TarGetSpeed());
 
 
     }
@@ -29,5 +28,7 @@ public class WalkState : StateMachine
         }
         if (player.CheckJumpInput()) player.SetState(new JumpState(this.player));
         player.ProcessMove(player.TarGetSpeed());
+        animator.SetFloat(player.move_animation_blend_name, player.speed);
+
     }
 }
