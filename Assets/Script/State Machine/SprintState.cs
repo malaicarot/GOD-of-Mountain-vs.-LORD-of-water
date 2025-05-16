@@ -16,6 +16,8 @@ public class SprintState : StateMachine
     }
     public override void Update()
     {
+        player.ProcessMove(player.TarGetSpeed());
+        animator.SetFloat(player.move_animation_blend_name, player.speed);
         if (!player.CheckSprintInput())
         {
             if (!player.CheckMoveInput())
@@ -24,9 +26,9 @@ public class SprintState : StateMachine
             }
             player.SetState(new WalkState(this.player));
         }
-        if (player.CheckJumpInput()) player.SetState(new JumpState(this.player));
-        player.ProcessMove(player.TarGetSpeed());
-        animator.SetFloat(player.move_animation_blend_name, player.speed);
-
+        if (player.CheckJumpInput())
+        {
+            player.SetState(new JumpState(this.player));
+        }
     }
 }

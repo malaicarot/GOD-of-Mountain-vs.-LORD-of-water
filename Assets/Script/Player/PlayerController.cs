@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         currentState.Update();
         ProcessRotation();
         CalculateVelocity();
+        // CountdownTime.SingletonCountdown.Countdown(4f);
     }
 
     public void SetState(StateMachine state)
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
         if (input.move == Vector2.zero)
         {
             targetSpeed = 0;
-            
+
         }
         else
         {
@@ -136,7 +137,10 @@ public class PlayerController : MonoBehaviour
     }
     public bool CheckJumpInput()
     {
-        if (input.jump && controller.isGrounded) return true;
+        if (input.jump && controller.isGrounded)
+        {
+            return true;
+        }
         return false;
     }
 }
